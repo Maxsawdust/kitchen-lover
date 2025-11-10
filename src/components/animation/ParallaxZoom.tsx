@@ -85,8 +85,12 @@ export default function ParallaxZoom() {
 
   const headerText = "KITCHEN LOVER".split(" ");
 
-  const headerTransform1 = useTransform(scrollYProgress, [0.2, 0.5], [0, -800]);
-  const headerTransform2 = useTransform(scrollYProgress, [0.2, 0.5], [0, 800]);
+  const headerTransform1 = useTransform(
+    scrollYProgress,
+    [0.2, 0.5],
+    [0, -1000]
+  );
+  const headerTransform2 = useTransform(scrollYProgress, [0.2, 0.5], [0, 1000]);
   const headerTransforms = [headerTransform1, headerTransform2];
 
   return (
