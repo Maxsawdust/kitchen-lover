@@ -1,4 +1,6 @@
 import { getAllGigs } from "@/lib/db";
+
+export const dynamic = "force-dynamic";
 import {
   MusicPromo,
   Landing,

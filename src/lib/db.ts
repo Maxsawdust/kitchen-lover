@@ -52,7 +52,7 @@ function ensureDb(): Promise<void> {
 
 async function _init(): Promise<void> {
   // Create tables
-  await client.executeMultiple(`
+  await client.execute(`
     CREATE TABLE IF NOT EXISTS gigs (
       id            INTEGER PRIMARY KEY AUTOINCREMENT,
       date          TEXT    NOT NULL,
@@ -62,14 +62,15 @@ async function _init(): Promise<void> {
       promo         TEXT    NOT NULL DEFAULT '',
       display_order INTEGER NOT NULL DEFAULT 0,
       created_at    TEXT    NOT NULL DEFAULT (datetime('now'))
-    );
-
+    )
+  `);
+  await client.execute(`
     CREATE TABLE IF NOT EXISTS users (
       id            INTEGER PRIMARY KEY AUTOINCREMENT,
       username      TEXT    UNIQUE NOT NULL,
       password_hash TEXT    NOT NULL,
       created_at    TEXT    NOT NULL DEFAULT (datetime('now'))
-    );
+    )
   `);
 
   // Seed gigs if empty

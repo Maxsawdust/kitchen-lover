@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getGigById } from "@/lib/db";
 import GigForm from "../../GigForm";
 
+export const dynamic = "force-dynamic";
+
 type Props = { params: Promise<{ id: string }> };
 
 export default async function EditGigPage({ params }: Props) {

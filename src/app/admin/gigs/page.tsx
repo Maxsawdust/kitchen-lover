@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getAllGigs } from "@/lib/db";
 import GigTable from "./GigTable";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminGigsPage() {
   const gigs = await getAllGigs();
 
