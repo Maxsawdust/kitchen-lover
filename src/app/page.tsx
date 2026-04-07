@@ -6,8 +6,8 @@ import {
   ShopButton,
 } from "@/components";
 
-export default function Home() {
-  const gigs = getAllGigs();
+export default async function Home() {
+  const gigs = await getAllGigs();
 
   return (
     <>

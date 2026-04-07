@@ -2,8 +2,8 @@ import Link from "next/link";
 import { getAllGigs } from "@/lib/db";
 import GigTable from "./GigTable";
 
-export default function AdminGigsPage() {
-  const gigs = getAllGigs();
+export default async function AdminGigsPage() {
+  const gigs = await getAllGigs();
 
   return (
     <div className="max-w-5xl mx-auto">

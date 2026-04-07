@@ -19,7 +19,7 @@ export async function PUT(request: NextRequest, context: RouteContext): Promise<
   const { id: idStr } = await context.params;
   const id = Number(idStr);
 
-  if (!getGigById(id)) {
+  if (!(await getGigById(id))) {
     return NextResponse.json({ error: "Gig not found" }, { status: 404 });
   }
 
@@ -37,7 +37,7 @@ export async function PUT(request: NextRequest, context: RouteContext): Promise<
     return NextResponse.json({ error: "date and location are required" }, { status: 400 });
   }
 
-  const updated = updateGig(id, { date, title, location, link, promo });
+  const updated = await updateGig(id, { date, title, location, link, promo });
   return NextResponse.json(updated);
 }
 
@@ -49,10 +49,10 @@ export async function DELETE(request: NextRequest, context: RouteContext): Promi
   const { id: idStr } = await context.params;
   const id = Number(idStr);
 
-  if (!getGigById(id)) {
+  if (!(await getGigById(id))) {
     return NextResponse.json({ error: "Gig not found" }, { status: 404 });
   }
 
-  deleteGig(id);
+  await deleteGig(id);
   return NextResponse.json({ ok: true });
 }

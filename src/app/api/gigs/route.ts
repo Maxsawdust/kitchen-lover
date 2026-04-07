@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getAllGigs } from "@/lib/db";
 
-export function GET(): NextResponse {
-  const gigs = getAllGigs();
+export async function GET(): Promise<NextResponse> {
+  const gigs = await getAllGigs();
   return NextResponse.json(gigs);
 }

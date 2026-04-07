@@ -7,7 +7,7 @@ type Props = { params: Promise<{ id: string }> };
 
 export default async function EditGigPage({ params }: Props) {
   const { id } = await params;
-  const gig = getGigById(Number(id));
+  const gig = await getGigById(Number(id));
 
   if (!gig) notFound();
 

@@ -13,7 +13,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
   if (!(await requireAuth(request))) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  return NextResponse.json(getAllGigs());
+  return NextResponse.json(await getAllGigs());
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
@@ -35,6 +35,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ error: "date and location are required" }, { status: 400 });
   }
 
-  const gig = createGig({ date, title, location, link, promo });
+  const gig = await createGig({ date, title, location, link, promo });
   return NextResponse.json(gig, { status: 201 });
 }

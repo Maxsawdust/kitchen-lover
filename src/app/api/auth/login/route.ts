@@ -18,7 +18,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ error: "Username and password are required" }, { status: 400 });
   }
 
-  const user = getUserByUsername(username);
+  const user = await getUserByUsername(username);
 
   if (!user || !(await bcrypt.compare(password, user.password_hash))) {
     return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
