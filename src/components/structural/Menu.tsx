@@ -69,7 +69,8 @@ export default function Menu() {
         <Link
           onClick={closeMenu}
           href="https://kitchenlover.bandcamp.com/merch"
-          target="_blank">
+          target="_blank"
+          rel="noopener noreferrer">
           Shop
         </Link>
       </div>

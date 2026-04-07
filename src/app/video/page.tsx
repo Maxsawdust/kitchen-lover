@@ -1,11 +1,9 @@
-"use client";
-
 import MusicVideoListing from "@/components/structural/MusicVideoListing";
 import musicVideoArr from "@/utils/musicVideoArr";
 
 export default function VideoPage() {
   return (
-    <div className="flex-1 flex flex-col gap-10 items-center py-10">
+    <div className="flex-1 flex flex-col gap-10 items-center py-10 md:pt-20">
       <h1 className="text-5xl font-bold text-[#f5e85e]">Music Videos</h1>
       
       <span

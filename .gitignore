@@ -32,6 +32,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.local.example
+
+# SQLite database (runtime data — use Render Persistent Disk in production)
+/data/
 
 # vercel
 .vercel

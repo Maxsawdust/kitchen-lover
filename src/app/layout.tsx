@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import "./globals.css";
 import Providers from "@/store/context/Providers";
-import { MenuWrapper } from "@/components";
+import Nav from "@/components/structural/Nav";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -18,14 +18,15 @@ const oswald = Oswald({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Kitchen Lover",
   description: "Conceived in the kitchen",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
 };
 
 export default function RootLayout({
@@ -38,7 +39,7 @@ export default function RootLayout({
       <Providers>
         <body
           className={`h-screen w-screen ${geistSans.variable} ${geistMono.variable} ${oswald.className} flex flex-col antialiased`}>
-          <MenuWrapper />
+          <Nav />
           {children}
         </body>
       </Providers>

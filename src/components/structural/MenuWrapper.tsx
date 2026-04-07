@@ -1,6 +1,7 @@
 "use client";
 
-import { MenuButton, Menu } from "@/components";
+import MenuButton from "@/components/buttons/MenuButton";
+import Menu from "@/components/structural/Menu";
 import { useAppSelector } from "@/store/hooks/reduxHooks";
 import { AnimatePresence } from "framer-motion";
 

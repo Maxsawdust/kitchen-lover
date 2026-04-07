@@ -2,6 +2,7 @@ export { default as Header } from "./sections/Header";
 export { default as MenuButton } from "./buttons/MenuButton";
 export { default as Menu } from "./structural/Menu";
 export { default as MenuWrapper } from "./structural/MenuWrapper";
+export { default as Nav } from "./structural/Nav";
 export { default as MusicPromo } from "./sections/MusicPromo";
 export { default as PromoImages } from "./structural/PromoImages";
 export { default as Landing } from "./sections/Landing";

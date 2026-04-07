@@ -1,7 +1,8 @@
 "use client";
 
 import { useAppSelector } from "@/store/hooks/reduxHooks";
-import { MenuButton, Menu } from "../";
+import MenuButton from "@/components/buttons/MenuButton";
+import Menu from "@/components/structural/Menu";
 import { AnimatePresence } from "framer-motion";
 import kitchenLogo from "@/assets/images/kitchen_logo.png";
 import Image from "next/image";

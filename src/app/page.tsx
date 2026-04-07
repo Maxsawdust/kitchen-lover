@@ -1,5 +1,4 @@
-"use client";
-
+import { getAllGigs } from "@/lib/db";
 import {
   MusicPromo,
   Landing,
@@ -8,6 +7,8 @@ import {
 } from "@/components";
 
 export default function Home() {
+  const gigs = getAllGigs();
+
   return (
     <>
       <ShopButton />
@@ -15,7 +16,7 @@ export default function Home() {
       <div className="flex-1">
         <Landing />
 
-        <UpcomingShows />
+        <UpcomingShows gigs={gigs} />
 
         <MusicPromo />
       </div>
